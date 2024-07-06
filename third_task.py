@@ -1,6 +1,9 @@
 import re
 
 def normalize_phone(phone_number: str):
+    """
+    Function return normalized phone number.
+    """
     pattern = r"[^+\d]"
     number = re.sub(pattern, '', phone_number)
 
