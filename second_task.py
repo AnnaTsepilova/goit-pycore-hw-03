@@ -1,6 +1,6 @@
 import random
 
-def get_numbers_ticket(minimum: int, maximum: int, quantity: int):
+def get_numbers_ticket(minimum: int, maximum: int, quantity: int) -> list:
     """
     Function return quantity amount of randmized numbers list
     """
