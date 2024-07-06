@@ -2,19 +2,20 @@ from datetime import datetime
 
 def get_days_from_today(date):
     """
-    Function return period in days between two entered date and current_date(now)
+    Function return period in days between entered date and current_date(now)
     """
-    days = 0
-    datetime_object = datetime.strptime(date, '%Y-%m-%d')
-    print(datetime_object)
+    try:
+        datetime_object = datetime.strptime(date, '%Y-%m-%d')
+    except ValueError:
+        print("Incorrect date")
+        return False
 
     current_date = datetime.today()
-    print(current_date)
 
-    days = current_date - datetime_object
+    time_delta = current_date - datetime_object
 
-    return days
+    return time_delta.days
 
-data = input("Input date in format `YYYY-mm-dd`?\n")
+data = input("Input date in format `YYYY-MM-DD`?\n")
 delta_days = get_days_from_today(data)
 print(delta_days)
